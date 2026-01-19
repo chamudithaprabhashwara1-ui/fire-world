@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"/>
+  <title>Free Fire Inspired Mobile Web Shooter</title>
+  <link rel="stylesheet" href="style.css"/>
+  <!-- Force landscape hint (mobile browsers may prompt) -->
+  <meta name="screen-orientation" content="landscape">
+  <style>
+    body { margin:0; overflow:hidden; background:#000; }
+    canvas { display:block; }
+  </style>
+</head>
+<body>
+  <canvas id="gameCanvas"></canvas>
+
+  <!-- Virtual Controls (overlay) -->
+  <div id="controls">
+    <!-- Left joystick area (invisible touch zone) -->
+    <div id="joystickZone" class="touch-zone left"></div>
+    
+    <!-- Right aim/swipe area -->
+    <div id="aimZone" class="touch-zone right"></div>
+    
+    <!-- Buttons (right side) -->
+    <button id="fireBtn" class="control-btn fire">FIRE</button>
+    <button id="jumpBtn" class="control-btn jump">JUMP</button>
+    <button id="reloadBtn" class="control-btn reload">RELOAD</button>
+    <button id="sprintBtn" class="control-btn sprint">SPRINT</button>
+  </div>
+
+  <script src="game.js"></script>
+</body>
+</html>

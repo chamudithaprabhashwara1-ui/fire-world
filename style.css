@@ -1,0 +1,51 @@
+/* Modern mobile game UI - responsive with percentages */
+#controls {
+  position: fixed;
+  inset: 0;
+  pointer-events: none; /* Allow clicks through to canvas if needed, but buttons override */
+  z-index: 10;
+  user-select: none;
+  touch-action: none;
+}
+
+.touch-zone {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  width: 40%;
+  pointer-events: auto;
+  opacity: 0; /* Invisible but touchable */
+}
+
+.left { left: 0; }
+.right { right: 0; }
+
+.control-btn {
+  position: absolute;
+  bottom: 10%;
+  width: 18vw;
+  height: 18vw;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.3);
+  border: 2px solid #fff;
+  color: white;
+  font-size: 4vw;
+  font-weight: bold;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  pointer-events: auto;
+  touch-action: manipulation;
+  backdrop-filter: blur(5px);
+  box-shadow: 0 4px 10px rgba(0,0,0,0.5);
+}
+
+.fire { right: 25%; bottom: 30%; background: rgba(255, 0, 0, 0.4); }
+.jump { right: 45%; bottom: 30%; background: rgba(0, 255, 0, 0.3); }
+.reload { right: 10%; bottom: 30%; background: rgba(255, 165, 0, 0.4); }
+.sprint { right: 35%; bottom: 55%; background: rgba(0, 0, 255, 0.3); }
+
+/* Responsive - adjust for small screens */
+@media (max-width: 600px) {
+  .control-btn { width: 22vw; height: 22vw; font-size: 5vw; }
+}
